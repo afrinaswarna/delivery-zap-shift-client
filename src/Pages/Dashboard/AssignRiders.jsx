@@ -44,7 +44,8 @@ console.log(riders)
         riderName:rider.name,
         riderEmail:rider.email,
         riderId:rider._id,
-        parcelId:selectedParcel._id
+        parcelId:selectedParcel._id,
+       
 
     }
     axiosSecure.patch(`/parcel/${selectedParcel._id}`,riderAssignInfo)

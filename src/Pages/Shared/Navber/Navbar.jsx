@@ -4,7 +4,7 @@ import Logo from "../../../components/logo/Logo";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const { user ,logOut} = useAuth();
+  const { user, logOut } = useAuth();
   const links = (
     <>
       <li>
@@ -22,11 +22,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/coverage">Coverage</NavLink>
       </li>
-      {
-        user && <li>
-        <NavLink to="/dashboard/my-parcels">My Parcel</NavLink>
-      </li>
-      }
+      {user && (
+        <>
+          <li>
+            <NavLink to="/dashboard/my-parcels">My Parcel</NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 

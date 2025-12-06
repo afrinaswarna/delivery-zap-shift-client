@@ -6,6 +6,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router";
 
 const MyParcels = () => {
   const { user } = useAuth();
@@ -97,8 +98,12 @@ const MyParcels = () => {
                   )}
                 </td>
                 
-                <td>{parcel.trackingId}</td>
                 <td>{parcel.deliveryStatus}</td>
+                <td>
+                  <Link to={`/parcel-track/${parcel.trackingId}`}>
+                  {parcel.trackingId}
+                  </Link>
+                </td>
                 <td>
                   <button className="btn btn-square hover:bg-primary">
                     <FaMagnifyingGlass />
